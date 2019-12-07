@@ -1,0 +1,58 @@
+GET _search
+
+{
+  "query": {
+    "match_all": {}
+  }
+}
+GET _cat/indices
+
+PUT /movies/_doc/id-1
+{
+  "director": {
+    "firstName": "Todd",
+      "id": "dir-1",
+      "lastName": "Philips"
+    },
+  "id": "id-1",
+  "title": "Joker",
+  "yearOfRelease": 2019
+}
+GET /movies/_doc/id-1
+
+PUT /movies/_doc/id-2
+{
+  "director": {
+    "firstName": "Akan",
+      "id": "dir-2",
+      "lastName": "Sataev"
+    },
+  "id": "id-2",
+  "title": "Tomiris",
+  "yearOfRelease": 2019
+}
+GET /movies/_doc/id-2
+GET /movies/_doc/_search
+
+PUT /movies
+DELETE movies
+
+
+PUT /movies/_doc/id-3
+{
+  "director": {
+    "firstName": "Todd",
+      "id": "dir-1",
+      "lastName": "Philips"
+    },
+  "id": "id-1",
+  "title": "Joker",
+  "yearOfRelease": 2019,
+  "comment": "I like it"
+}
+GET /movies/_doc/id-3
+
+
+
+
+
